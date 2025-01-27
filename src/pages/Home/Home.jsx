@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import "./Home.css";
+import { Link } from "react-router";
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <button className="home__find-van-button">Find your van</button>
+        <Link to="/vans" className="home__find-van-button">
+          Find your van
+        </Link>
       </main>
       <Footer />
     </>

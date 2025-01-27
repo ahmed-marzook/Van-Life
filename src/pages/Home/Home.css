@@ -34,4 +34,11 @@
   font-weight: 700;
   font-size: 1rem;
   padding: 20px 0px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home__find-van-button:hover {
+  filter: invert(0.3);
+  transform: scale(0.98);
 }

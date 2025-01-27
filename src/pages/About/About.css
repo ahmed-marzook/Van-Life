@@ -37,6 +37,13 @@
   font-weight: 600;
   padding: 15px 22px;
   margin-bottom: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.about__explore-our-vans-button:hover {
+  filter: invert(0.3);
+  transform: scale(0.98);
 }
 
 .about__article {

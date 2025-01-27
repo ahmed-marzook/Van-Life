@@ -2,6 +2,7 @@ import "./About.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import starVanManImg from "../../assets/star-van-man.png";
+import { Link } from "react-router";
 
 export default function About() {
   return (
@@ -32,9 +33,9 @@ export default function About() {
               </h3>
               <h3 className="about__explore-header">Your van is ready.</h3>
             </div>
-            <button className="about__explore-our-vans-button">
+            <Link to="/vans" className="about__explore-our-vans-button">
               Explore our vans
-            </button>
+            </Link>
           </section>
         </article>
       </main>
