@@ -1,0 +1,33 @@
+:root {
+  --font-primary: "Inter", serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media screen and (min-height: 800px) {
+  main {
+    /* Only enable scroll if content overflows */
+    overflow-y: auto;
+    /* Set a max-height for content */
+    max-height: calc(100vh - 120px);
+  }
+}

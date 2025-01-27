@@ -1,0 +1,37 @@
+.header {
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.header__logo {
+  height: 2.6rem;
+  width: 9rem;
+}
+
+.header__nav-links {
+  align-content: center;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style-type: none;
+  gap: 4rem;
+  font-weight: 600;
+  margin: 0px;
+  color: #4d4d4d;
+  padding: 0;
+}
+
+.header__nav-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__nav-list a:hover {
+  transform: translate(1px, 1px);
+}
