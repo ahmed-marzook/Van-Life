@@ -18,6 +18,10 @@ main {
   font-family: var(--font-primary);
 }
 
+body {
+  background-color: #fff7ed;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -25,5 +29,7 @@ main {
   min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #fff7ed;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
