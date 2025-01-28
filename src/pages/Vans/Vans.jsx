@@ -1,5 +1,6 @@
 import "./Vans.css";
-import vanImage from "../../assets/van.png";
+
+import Van from "../../components/Van/Van";
 
 export default function Vans() {
   return (
@@ -14,134 +15,14 @@ export default function Vans() {
         <button className="vans__options-button clear">Clear filters</button>
       </section>
       <section className="vans__list">
-        {/* van one */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag luxury">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van two */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van three */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag rugged">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van four */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van five */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van six */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van five */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
-        {/* van six */}
-        <div className="vans_card">
-          <div className="vans__card-image">
-            <img src={vanImage} />
-          </div>
-          <div className="vans__card-content">
-            <div className="vans__card-title-section">
-              <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
-            </div>
-            <div className="vans__card-price">
-              <span className="vans__price-amount">$60</span>
-              <span className="vans__price-period">/day</span>
-            </div>
-          </div>
-        </div>
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"luxury"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"rugged"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
       </section>
     </main>
   );
