@@ -3,7 +3,7 @@ import vanImage from "../../assets/van.png";
 
 export default function Vans() {
   return (
-    <main>
+    <main className="vans__main-content">
       <section>
         <h1 className="vans__heading">Explore our van options</h1>
       </section>
@@ -22,7 +22,7 @@ export default function Vans() {
           <div className="vans__card-content">
             <div className="vans__card-title-section">
               <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
+              <span className="vans__card-tag luxury">Simple</span>
             </div>
             <div className="vans__card-price">
               <span className="vans__price-amount">$60</span>
@@ -54,7 +54,7 @@ export default function Vans() {
           <div className="vans__card-content">
             <div className="vans__card-title-section">
               <h3 className="vans__card-title">Modest Explorer</h3>
-              <span className="vans__card-tag">Simple</span>
+              <span className="vans__card-tag rugged">Simple</span>
             </div>
             <div className="vans__card-price">
               <span className="vans__price-amount">$60</span>

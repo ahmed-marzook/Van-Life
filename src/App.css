@@ -1,5 +1,7 @@
 :root {
   --font-primary: "Inter", serif;
+
+  --header-color: #161616;
 }
 
 main {
@@ -24,13 +26,4 @@ main {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #fff7ed;
-}
-
-@media screen and (min-height: 800px) {
-  main {
-    /* Only enable scroll if content overflows */
-    overflow-y: auto;
-    /* Set a max-height for content */
-    max-height: calc(100vh - 120px);
-  }
 }

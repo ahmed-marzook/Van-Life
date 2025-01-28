@@ -1,13 +1,27 @@
+.vans__main-content {
+  display: flex;
+  flex-direction: column;
+  margin: 54px 26px;
+}
+
+.vans__heading {
+  color: var(--header-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 .vans__list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  justify-items: start;
   gap: 25px;
   overflow: hidden;
   overflow-y: hidden;
 }
+
 .vans__card {
+  display: flex;
+  flex-direction: column;
   max-width: 230px;
   max-height: 340px;
 }
@@ -28,17 +42,56 @@
   max-width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-top: 10px;
+  color: var(--header-color);
+}
+
+.vans__card-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .vans__card-title {
   font-family: inherit;
-  font-weight: 550;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .vans__card-tag {
   background-color: #e17654;
   color: #ffead0;
   border-radius: 5px;
-  padding: 4px 14px;
+  padding: 7px 13px;
+  text-align: center;
+  max-height: 35px;
+  max-width: 85px;
+  font-weight: 500;
+}
+
+.vans__card-tag.simple {
+  background-color: #e17654;
+}
+
+.vans__card-tag.rugged {
+  background-color: #115e59;
+}
+
+.vans__card-tag.luxury {
+  background-color: #161616;
+}
+
+.vans__card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.vans__price-amount {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.vans__price-period {
+  font-size: 0.9rem;
 }
