@@ -1,7 +1,9 @@
 .vans__main-content {
   display: flex;
   flex-direction: column;
-  margin: 54px 26px;
+  margin: 54px 5%;
+  width: auto;
+  max-width: 100%;
 }
 
 .vans__heading {
@@ -10,9 +12,32 @@
   font-weight: 700;
 }
 
+.vans_options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 22px 0px 25px 0px;
+}
+
+.vans__options-button {
+  background-color: #ffead0;
+  color: #4d4d4d;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 7px 26px;
+  border: none;
+}
+
+.vans__options-button.clear {
+  background-color: transparent;
+  text-decoration: underline;
+  padding: 0px;
+}
+
 .vans__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   justify-items: start;
   gap: 25px;
   overflow: hidden;
@@ -23,8 +48,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 230px;
-  max-height: auto;
+  max-width: min(230px, 100%);
 }
 
 .vans__card-image {
