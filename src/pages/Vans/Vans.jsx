@@ -1,8 +1,28 @@
 import "./Vans.css";
-
+import { useState, useEffect } from "react";
 import Van from "../../components/Van/Van";
 
 export default function Vans() {
+  const [vanList, setVanList] = useState([]);
+
+  useEffect(() => {
+    console.log("fetched");
+    fetch("/api/vans")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setVanList(data.vans);
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
   return (
     <main className="vans__main-content">
       <section>
@@ -15,14 +35,15 @@ export default function Vans() {
         <button className="vans__options-button clear">Clear filters</button>
       </section>
       <section className="vans__list">
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"luxury"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"rugged"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
-        <Van vanName={"Modest Explorer"} vanTag={"simple"} vanPrice={60} />
+        {vanList.map((van) => (
+          <Van
+            key={van.id}
+            vanName={van.name}
+            vanTag={van.type}
+            vanPrice={van.price}
+            vanImageUrl={van.imageUrl}
+          />
+        ))}
       </section>
     </main>
   );
