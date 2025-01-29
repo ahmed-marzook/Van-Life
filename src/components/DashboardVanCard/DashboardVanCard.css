@@ -1,0 +1,39 @@
+.dashboard-van-card__van-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-van-card__van-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dashboard-van-card__van-image {
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dashboard-van-card__van-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-van-card__van-name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.dashboard-van-card__van-price {
+  margin: 0;
+  color: #4d4d4d;
+}

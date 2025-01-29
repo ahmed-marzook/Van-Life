@@ -1,0 +1,89 @@
+/* Header Section */
+.dashboard__welcome {
+  background-color: #ffead0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 2rem;
+}
+
+.dashboard__welcome-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard__income-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__income-period {
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.dashboard__income-days {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dashboard__income-amount {
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+/* Reviews Section */
+.dashboard__reviews {
+  background-color: #ffddb2;
+  padding: 1.5rem 2rem;
+}
+
+.dashboard__reviews-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard__reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Main Content */
+.dashboard__main {
+  margin: 2rem;
+  height: auto;
+}
+
+.dashboard__vans-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard__van-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Common Elements */
+.dashboard__link {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard__link:hover {
+  text-decoration: underline;
+}
