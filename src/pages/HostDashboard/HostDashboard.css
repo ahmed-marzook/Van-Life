@@ -94,6 +94,7 @@
 /* Main Content */
 .host-dashboard__main {
   margin: 2rem;
+  height: auto;
 }
 
 .host-dashboard__vans-header {
@@ -101,6 +102,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.host-dashboard__van-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .host-dashboard__van-card {

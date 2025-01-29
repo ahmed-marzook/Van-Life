@@ -84,22 +84,40 @@ export default function HostDashboard() {
               View all
             </Link>
           </div>
-
-          <div className="host-dashboard__van-card">
-            <div className="host-dashboard__van-content">
-              <img
-                src={van}
-                alt="Modest Explorer van"
-                className="host-dashboard__van-image"
-              />
-              <div className="host-dashboard__van-info">
-                <h3 className="host-dashboard__van-name">Modest Explorer</h3>
-                <p className="host-dashboard__van-price">$60/day</p>
+          <div className="host-dashboard__van-card-list">
+            <div className="host-dashboard__van-card">
+              <div className="host-dashboard__van-content">
+                <img
+                  src={van}
+                  alt="Modest Explorer van"
+                  className="host-dashboard__van-image"
+                />
+                <div className="host-dashboard__van-info">
+                  <h3 className="host-dashboard__van-name">Modest Explorer</h3>
+                  <p className="host-dashboard__van-price">$60/day</p>
+                </div>
               </div>
+              <Link to="/host/vans/1/edit" className="host-dashboard__link">
+                Edit
+              </Link>
             </div>
-            <Link to="/host/vans/1/edit" className="host-dashboard__link">
-              Edit
-            </Link>
+
+            <div className="host-dashboard__van-card">
+              <div className="host-dashboard__van-content">
+                <img
+                  src={van}
+                  alt="Modest Explorer van"
+                  className="host-dashboard__van-image"
+                />
+                <div className="host-dashboard__van-info">
+                  <h3 className="host-dashboard__van-name">Modest Explorer</h3>
+                  <p className="host-dashboard__van-price">$60/day</p>
+                </div>
+              </div>
+              <Link to="/host/vans/1/edit" className="host-dashboard__link">
+                Edit
+              </Link>
+            </div>
           </div>
         </section>
       </main>
