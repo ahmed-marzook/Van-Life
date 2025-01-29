@@ -1,7 +1,7 @@
 import "./HostDashboard.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
+import DashboardVans from "../../components/DashboardVans/DashboardVans";
 
 export default function HostDashboard() {
   const [activeNav, setActiveNav] = useState("dashboard");
@@ -39,7 +39,9 @@ export default function HostDashboard() {
           ))}
         </ul>
       </nav>
-      <Dashboard />
+      <main className="host-dashboard__main-content">
+        <Dashboard />
+      </main>
     </div>
   );
 }

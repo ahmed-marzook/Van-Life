@@ -4,7 +4,7 @@
 
 /* Navigation */
 .host-dashboard__nav {
-  margin: 2rem;
+  margin: 1rem 2rem;
 }
 
 .host-dashboard__nav-list {
@@ -29,4 +29,9 @@
 .host-dashboard__nav-link--active {
   color: var(--header-color);
   text-decoration: underline;
+}
+
+.host-dashboard__main-content {
+  margin-bottom: 1rem;
+  height: auto;
 }
