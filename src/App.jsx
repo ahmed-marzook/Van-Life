@@ -6,7 +6,7 @@ import "./server";
 import Vans from "./pages/Vans/Vans";
 import VanDetails from "./pages/VanDetails/VanDetails";
 import Layout from "./components/Layout/Layout";
-import Host from "./pages/Host/Host";
+import HostDashboard from "./pages/HostDashboard/HostDashboard";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetails />} />
-          <Route path="/host" element={<Host />} />
+          <Route path="/host" element={<HostDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

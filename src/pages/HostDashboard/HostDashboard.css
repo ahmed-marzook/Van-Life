@@ -1,0 +1,151 @@
+.dashboard {
+  width: 100%;
+}
+
+/* Navigation */
+.dashboard__nav {
+  margin: 2rem;
+}
+
+.dashboard__nav-list {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard__nav-link {
+  color: #4d4d4d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.dashboard__nav-link:hover {
+  transform: translate(1px, 1px);
+}
+
+.dashboard__nav-link--active {
+  color: var(--header-color);
+  text-decoration: underline;
+}
+
+/* Header Section */
+.dashboard__welcome {
+  background-color: #ffead0;
+  padding: 1.5rem 2rem;
+}
+
+.dashboard__welcome-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard__income-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__income-period {
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.dashboard__income-days {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dashboard__income-amount {
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+/* Reviews Section */
+.dashboard__reviews {
+  background-color: #ffddb2;
+  padding: 1.5rem 2rem;
+}
+
+.dashboard__reviews-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard__reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Main Content */
+.dashboard__main {
+  margin: 2rem;
+}
+
+.dashboard__vans-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard__van-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard__van-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dashboard__van-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dashboard__van-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard__van-name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.dashboard__van-price {
+  margin: 0;
+  color: #4d4d4d;
+}
+
+/* Common Elements */
+.dashboard__link {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard__link:hover {
+  text-decoration: underline;
+}
