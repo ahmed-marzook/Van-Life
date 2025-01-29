@@ -38,29 +38,6 @@
   font-size: 1.2rem;
 }
 
-.vans__card-tag {
-  background-color: #e17654;
-  color: #ffead0;
-  border-radius: 5px;
-  padding: 7px 13px;
-  text-align: center;
-  max-height: 35px;
-  max-width: 85px;
-  font-weight: 500;
-}
-
-.vans__card-tag.simple {
-  background-color: #e17654;
-}
-
-.vans__card-tag.rugged {
-  background-color: #115e59;
-}
-
-.vans__card-tag.luxury {
-  background-color: #161616;
-}
-
 .vans__card-price {
   display: flex;
   flex-direction: column;

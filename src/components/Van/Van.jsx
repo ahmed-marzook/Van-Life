@@ -1,12 +1,8 @@
 import PropTypes from "prop-types";
 import "./Van.css";
+import Tag from "../Tag/Tag";
 
 const Van = ({ vanImageUrl, vanName, vanPrice, vanTag }) => {
-  const formatTag = (tag) => {
-    if (!tag) return "";
-    return tag[0].toUpperCase() + tag.slice(1).toLowerCase();
-  };
-
   return (
     <article className="vans__card">
       <div className="vans__card-image">
@@ -16,9 +12,7 @@ const Van = ({ vanImageUrl, vanName, vanPrice, vanTag }) => {
       <div className="vans__card-content">
         <div className="vans__card-title-section">
           <h3 className="vans__card-title">{vanName}</h3>
-          <span className={`vans__card-tag ${vanTag.toLowerCase()}`}>
-            {formatTag(vanTag)}
-          </span>
+          <Tag tag={vanTag} />
         </div>
 
         <div className="vans__card-price">
