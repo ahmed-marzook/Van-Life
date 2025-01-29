@@ -13,6 +13,10 @@
   width: 9rem;
 }
 
+.header__logo:hover {
+  filter: invert(0.3);
+}
+
 .header__nav-links {
   align-content: center;
 }
@@ -34,4 +38,6 @@
 
 .header__nav-list a:hover {
   transform: translate(1px, 1px);
+  color: #161616;
+  text-decoration: underline;
 }

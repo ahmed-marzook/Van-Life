@@ -1,12 +1,11 @@
 /* Main container for the van detail page */
 .van-detail__main-content {
-  padding: 40px 27px; /* Adds space around content: 40px top/bottom, 27px left/right */
   display: flex; /* Uses flexbox layout */
   flex-direction: column; /* Stacks children vertically */
   align-items: flex-start; /* Aligns children to the start of the cross axis */
   gap: 10px; /* Adds 10px space between all child elements */
   max-width: 800px; /* Limits content width for readability */
-  margin: 0 auto; /* Centers the container horizontally */
+  margin: 0px auto; /* Centers the container horizontally */
   width: 100%; /* Takes full width of parent up to max-width */
 }
 

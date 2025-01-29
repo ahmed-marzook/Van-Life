@@ -7,18 +7,19 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Vans from "./pages/Vans/Vans";
 import VanDetails from "./pages/VanDetails/VanDetails";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element={<VanDetails />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VanDetails />} />
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
