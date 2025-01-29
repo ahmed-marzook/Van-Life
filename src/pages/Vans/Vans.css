@@ -52,3 +52,7 @@
   overflow: hidden; /* Prevents content from overflowing */
   overflow-y: hidden; /* Specifically prevents vertical overflow */
 }
+
+.vans__list a {
+  text-decoration: none;
+}
