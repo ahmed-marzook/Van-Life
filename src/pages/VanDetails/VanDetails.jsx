@@ -2,6 +2,7 @@ import "./VanDetails.css";
 import Tag from "../../components/Tag/Tag";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import VanDetailsSkeleton from "./VanDetailsSkeleton/VanDetailsSkeleton";
 
 export default function VanDetails() {
   const [van, setVan] = useState();
@@ -28,7 +29,7 @@ export default function VanDetails() {
     fetchVans();
   }, [params]);
 
-  if (isLoading) return <h1>Loading van...</h1>;
+  if (isLoading) return <VanDetailsSkeleton />;
   if (error) return <h1>Error: {error}</h1>;
 
   console.log(params);
