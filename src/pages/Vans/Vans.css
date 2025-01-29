@@ -1,45 +1,54 @@
+/* Main container for the vans listing page */
 .vans__main-content {
-  display: flex;
-  flex-direction: column;
-  margin: 54px 27px;
-  width: auto;
-  max-width: 100%;
+  display: flex; /* Uses flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  margin: 54px 27px; /* Adds space around content: 54px top/bottom, 27px left/right */
+  width: auto; /* Allows width to be determined by content */
+  max-width: 100%; /* Ensures content doesn't overflow container */
 }
 
+/* Page title styling */
 .vans__heading {
-  color: var(--header-color);
-  font-size: 2rem;
-  font-weight: 700;
+  color: var(--header-color); /* Uses color defined in CSS variables */
+  font-size: 2rem; /* Large font size for heading */
+  font-weight: 700; /* Makes text bold */
 }
 
+/* Container for filter buttons */
 .vans_options {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 22px 0px 25px 0px;
+  display: flex; /* Uses flexbox layout */
+  flex-direction: row; /* Arranges items horizontally */
+  flex-wrap: wrap; /* Allows buttons to wrap to next line */
+  gap: 1.5rem; /* Adds space between buttons */
+  margin: 22px 0px 25px 0px; /* Adds vertical spacing around button group */
 }
 
+/* Individual filter button styling */
 .vans__options-button {
-  background-color: #ffead0;
-  color: #4d4d4d;
-  font-weight: 500;
-  border-radius: 5px;
-  padding: 7px 26px;
-  border: none;
+  background-color: #ffead0; /* Light peach background */
+  color: #4d4d4d; /* Gray text color */
+  font-weight: 500; /* Medium font weight */
+  border-radius: 5px; /* Rounds corners */
+  padding: 7px 26px; /* Adds space inside buttons */
+  border: none; /* Removes border */
 }
 
+/* Clear filter button variant */
 .vans__options-button.clear {
-  background-color: transparent;
-  text-decoration: underline;
-  padding: 0px;
+  background-color: transparent; /* Removes background */
+  text-decoration: underline; /* Adds underline */
+  padding: 0px; /* Removes padding */
 }
 
+/* Grid container for van cards */
 .vans__list {
-  display: grid;
+  display: grid; /* Uses CSS Grid layout */
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  justify-items: start;
-  gap: 25px;
-  overflow: hidden;
-  overflow-y: hidden;
+  /* Creates responsive grid:
+     - auto-fit: fills available space
+     - minmax(230px, 1fr): each column minimum 230px, can grow equally */
+  justify-items: start; /* Aligns items to start of grid cells */
+  gap: 25px; /* Adds space between grid items */
+  overflow: hidden; /* Prevents content from overflowing */
+  overflow-y: hidden; /* Specifically prevents vertical overflow */
 }

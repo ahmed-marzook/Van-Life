@@ -1,53 +1,62 @@
+/* Individual van card container */
 .vans__card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: flex; /* Uses flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  width: 100%; /* Takes full width of grid cell */
 }
 
+/* Container for van image */
 .vans__card-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  height: auto;
+  width: 100%; /* Takes full width of card */
+  aspect-ratio: 1 / 1; /* Forces square aspect ratio */
+  height: auto; /* Maintains aspect ratio when scaling */
 }
 
+/* The actual van image */
 .vans__card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+  width: 100%; /* Takes full width of container */
+  height: 100%; /* Takes full height of container */
+  object-fit: cover; /* Ensures image covers area without distortion */
+  border-radius: 5px; /* Rounds corners slightly */
 }
 
+/* Container for van info below image */
 .vans__card-content {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  color: var(--header-color);
+  max-width: 100%; /* Prevents content from overflowing */
+  display: flex; /* Uses flexbox layout */
+  justify-content: space-between; /* Pushes title and price to opposite ends */
+  margin-top: 10px; /* Adds space between image and content */
+  color: var(--header-color); /* Uses color defined in CSS variables */
 }
 
+/* Container for van title and tag */
 .vans__card-title-section {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: flex; /* Uses flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  gap: 10px; /* Adds space between title and tag */
 }
 
+/* Van title text styling */
 .vans__card-title {
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-family: inherit; /* Uses same font as parent */
+  font-weight: 600; /* Makes text semi-bold */
+  font-size: 1.2rem; /* Slightly larger font size */
 }
 
+/* Price section container */
 .vans__card-price {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: flex; /* Uses flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: flex-end; /* Aligns price text to the right */
 }
 
+/* Price amount text */
 .vans__price-amount {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.2rem; /* Slightly larger font size */
+  font-weight: 600; /* Makes text semi-bold */
 }
 
+/* "per day" text */
 .vans__price-period {
-  font-size: 0.9rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
 }
