@@ -1,27 +1,34 @@
 import "./Vans.css";
 import { useState, useEffect } from "react";
 import Van from "../../components/Van/Van";
+import { Link } from "react-router-dom";
 
 export default function Vans() {
   const [vanList, setVanList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("fetched");
-    fetch("/api/vans")
-      .then((response) => {
+    const fetchVans = async () => {
+      try {
+        const response = await fetch("/api/vans");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then((data) => {
+        const data = await response.json();
         setVanList(data.vans);
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchVans();
   }, []);
+
+  if (isLoading) return <h1>Loading vans...</h1>;
+  if (error) return <h1>Error: {error}</h1>;
 
   return (
     <main className="vans__main-content">
@@ -36,13 +43,14 @@ export default function Vans() {
       </section>
       <section className="vans__list">
         {vanList.map((van) => (
-          <Van
-            key={van.id}
-            vanName={van.name}
-            vanTag={van.type}
-            vanPrice={van.price}
-            vanImageUrl={van.imageUrl}
-          />
+          <Link to={`/vans/${van.id}`} key={van.id}>
+            <Van
+              vanName={van.name}
+              vanTag={van.type}
+              vanPrice={van.price}
+              vanImageUrl={van.imageUrl}
+            />
+          </Link>
         ))}
       </section>
     </main>
