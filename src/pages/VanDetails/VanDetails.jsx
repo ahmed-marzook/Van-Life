@@ -2,7 +2,6 @@ import "./VanDetails.css";
 import Tag from "../../components/Tag/Tag";
 import vanImage from "../../assets/van.png";
 import { Link } from "react-router-dom";
-import leftArrow from "../../assets/left-arrow.svg";
 
 export default function VanDetails() {
   return (
