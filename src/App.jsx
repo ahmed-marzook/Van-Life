@@ -3,11 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./server";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Vans from "./pages/Vans/Vans";
 import VanDetails from "./pages/VanDetails/VanDetails";
 import Layout from "./components/Layout/Layout";
+import Host from "./pages/Host/Host";
 
 function App() {
   return (
@@ -18,6 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetails />} />
+          <Route path="/host" element={<Host />} />
         </Route>
       </Routes>
     </BrowserRouter>
