@@ -2,6 +2,8 @@ import "./HostDashboard.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import star from "../../assets/star.svg";
+import van from "../../assets/van.png";
+
 export default function HostDashboard() {
   const [activeNav, setActiveNav] = useState("dashboard");
 
@@ -82,10 +84,11 @@ export default function HostDashboard() {
               View all
             </Link>
           </div>
+
           <div className="host-dashboard__van-card">
             <div className="host-dashboard__van-content">
               <img
-                src="/api/placeholder/100/100"
+                src={van}
                 alt="Modest Explorer van"
                 className="host-dashboard__van-image"
               />
