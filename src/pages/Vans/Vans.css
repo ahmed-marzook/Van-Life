@@ -2,7 +2,7 @@
 .vans__main-content {
   display: flex; /* Uses flexbox layout */
   flex-direction: column; /* Stacks children vertically */
-  margin: 0px 27px; /* Adds space around content: 54px top/bottom, 27px left/right */
+  margin: 0px 27px 20px 27px; /* Adds space around content: 54px top/bottom, 27px left/right */
   width: auto; /* Allows width to be determined by content */
   max-width: 100%; /* Ensures content doesn't overflow container */
 }
