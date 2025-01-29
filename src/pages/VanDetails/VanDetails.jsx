@@ -1,6 +1,5 @@
 import "./VanDetails.css";
 import Tag from "../../components/Tag/Tag";
-import vanImage from "../../assets/van.png";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 

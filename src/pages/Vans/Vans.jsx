@@ -2,6 +2,7 @@ import "./Vans.css";
 import { useState, useEffect } from "react";
 import Van from "../../components/Van/Van";
 import { Link } from "react-router-dom";
+import VanCardSkeleton from "../../components/Van/VanSkeleton/VanSkeleton";
 
 export default function Vans() {
   const [vanList, setVanList] = useState([]);
@@ -27,7 +28,6 @@ export default function Vans() {
     fetchVans();
   }, []);
 
-  if (isLoading) return <h1>Loading vans...</h1>;
   if (error) return <h1>Error: {error}</h1>;
 
   return (
@@ -42,16 +42,21 @@ export default function Vans() {
         <button className="vans__options-button clear">Clear filters</button>
       </section>
       <section className="vans__list">
-        {vanList.map((van) => (
-          <Link to={`/vans/${van.id}`} key={van.id}>
-            <Van
-              vanName={van.name}
-              vanTag={van.type}
-              vanPrice={van.price}
-              vanImageUrl={van.imageUrl}
-            />
-          </Link>
-        ))}
+        {isLoading
+          ? // Render multiple skeletons while loading
+            Array(8)
+              .fill(null)
+              .map((_, index) => <VanCardSkeleton key={index} />)
+          : vanList.map((van) => (
+              <Link to={`/vans/${van.id}`} key={van.id}>
+                <Van
+                  vanName={van.name}
+                  vanTag={van.type}
+                  vanPrice={van.price}
+                  vanImageUrl={van.imageUrl}
+                />
+              </Link>
+            ))}
       </section>
     </main>
   );
