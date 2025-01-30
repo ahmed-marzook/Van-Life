@@ -1,7 +1,7 @@
 import "./HostDashboard.css";
 import { useState } from "react";
-import Dashboard from "../../components/Dashboard/Dashboard";
-import DashboardVans from "../../components/DashboardVans/DashboardVans";
+import Dashboard from "./Dashboard/Dashboard";
+import DashboardVans from "./DashboardVans/DashboardVans";
 
 export default function HostDashboard() {
   const [activeNav, setActiveNav] = useState("dashboard");

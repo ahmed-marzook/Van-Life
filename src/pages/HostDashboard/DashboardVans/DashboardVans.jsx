@@ -1,6 +1,6 @@
 import "./DashboardVans.css";
 import PropTypes from "prop-types";
-import DashboardVanCard from "../DashboardVanCard/DashboardVanCard";
+import DashboardVanCard from "../../../components/DashboardVanCard/DashboardVanCard";
 
 function DashboardVans(props) {
   return (

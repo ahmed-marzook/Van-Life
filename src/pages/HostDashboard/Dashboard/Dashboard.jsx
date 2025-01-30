@@ -1,8 +1,8 @@
 import "./Dashboard.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import star from "../../assets/star.svg";
-import DashboardVanCard from "../DashboardVanCard/DashboardVanCard";
+import star from "../../../assets/star.svg";
+import DashboardVanCard from "../../../components/DashboardVanCard/DashboardVanCard";
 
 function Dashboard(props) {
   return (
