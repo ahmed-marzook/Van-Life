@@ -41,3 +41,9 @@
   color: var(--header-color);
   text-decoration: underline;
 }
+
+.header__nav-list.active {
+  transform: translate(1px, 1px);
+  color: var(--header-color);
+  text-decoration: underline;
+}

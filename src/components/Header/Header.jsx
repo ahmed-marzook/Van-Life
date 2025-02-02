@@ -1,6 +1,6 @@
 import logo from "../../assets/vanlife-logo.svg";
 import "./Header.css";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export default function Header() {
   return (
@@ -11,13 +11,34 @@ export default function Header() {
       <nav className="header__nav-links">
         <ul className="header__nav-list">
           <li>
-            <Link to="/host">Host</Link>
+            <NavLink
+              to="/host"
+              className={({ isActive }) =>
+                isActive ? "header__nav-list active" : undefined
+              }
+            >
+              Host
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "header__nav-list active" : undefined
+              }
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="/vans">Vans</Link>
+            <NavLink
+              to="/vans"
+              className={({ isActive }) =>
+                isActive ? "header__nav-list active" : undefined
+              }
+            >
+              Vans
+            </NavLink>
           </li>
         </ul>
       </nav>

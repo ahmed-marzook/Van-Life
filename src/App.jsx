@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./server";
@@ -11,6 +11,7 @@ import DashboardVans from "./pages/HostDashboard/DashboardVans/DashboardVans";
 import DashboardReview from "./pages/HostDashboard/DashboardReviews/DashboardReview";
 import DashboardIncome from "./pages/HostDashboard/DashboardIncome/DashboardIncome";
 import Dashboard from "./pages/HostDashboard/Dashboard/Dashboard";
+import DashboardVanLisiting from "./pages/HostDashboard/DashboardVanListing/DashboardVanListing";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="income" element={<DashboardIncome />} />
             <Route path="reviews" element={<DashboardReview />} />
             <Route path="vans" element={<DashboardVans />} />
+            <Route path="vans/:id" element={<DashboardVanLisiting />} />
           </Route>
         </Route>
       </Routes>

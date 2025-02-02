@@ -32,7 +32,6 @@ export default function VanDetails() {
   if (isLoading) return <VanDetailsSkeleton />;
   if (error) return <h1>Error: {error}</h1>;
 
-  console.log(params);
   return (
     <main className="van-detail__main-content">
       <section className="van-detail__back-link">

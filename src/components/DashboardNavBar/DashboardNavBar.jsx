@@ -1,13 +1,12 @@
 import "./DashboardNavBar.css";
-import PropTypes from "prop-types";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function DashboardNavBar(props) {
+function DashboardNavBar() {
   return (
     <nav className="dashboard-nav-bar__nav-list">
       <NavLink
         to="/host"
+        end
         className={({ isActive }) =>
           isActive
             ? "dashboard-nav-bar__nav-link active"
@@ -49,7 +48,5 @@ function DashboardNavBar(props) {
     </nav>
   );
 }
-
-DashboardNavBar.propTypes = {};
 
 export default DashboardNavBar;
