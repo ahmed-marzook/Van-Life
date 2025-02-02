@@ -3,8 +3,35 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import star from "../../../assets/star.svg";
 import DashboardVanCard from "../../../components/DashboardVanCard/DashboardVanCard";
+import { useState, useEffect } from "react";
 
 function Dashboard(props) {
+  const [vanList, setVanList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchVans = async () => {
+      try {
+        const response = await fetch("/api/vans");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setVanList(data.vans);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchVans();
+  }, []);
+
+  if (isLoading) return <h1>Loading...</h1>;
+
+  if (error) return <h1>Error: {error}</h1>;
   return (
     <div className="dashboard">
       <header className="dashboard__header">
@@ -50,10 +77,16 @@ function Dashboard(props) {
             </Link>
           </div>
           <div className="dashboard__van-card-list">
-            <DashboardVanCard />
-            <DashboardVanCard />
-            <DashboardVanCard />
-            <DashboardVanCard />
+            {vanList.map((van) => (
+              <DashboardVanCard
+                key={van.id}
+                vanId={van.id}
+                vanName={van.name}
+                vanTag={van.type}
+                vanPrice={van.price}
+                vanImageUrl={van.imageUrl}
+              />
+            ))}
           </div>
         </section>
       </main>
