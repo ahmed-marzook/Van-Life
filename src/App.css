@@ -4,12 +4,6 @@
   --header-color: #161616;
 }
 
-main {
-  height: 100vh;
-  flex: 1;
-  overflow: hidden;
-}
-
 * {
   margin: 0;
   padding: 0;
