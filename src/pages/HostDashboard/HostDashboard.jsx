@@ -1,5 +1,6 @@
 import DashboardNavBar from "../../components/DashboardNavBar/DashboardNavBar";
 import { Outlet } from "react-router-dom";
+import "./HostDashboard.css";
 
 export default function HostDashboard() {
   return (

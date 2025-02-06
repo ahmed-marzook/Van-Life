@@ -12,6 +12,9 @@ import DashboardReview from "./pages/HostDashboard/DashboardReviews/DashboardRev
 import DashboardIncome from "./pages/HostDashboard/DashboardIncome/DashboardIncome";
 import Dashboard from "./pages/HostDashboard/Dashboard/Dashboard";
 import DashboardVanLisiting from "./pages/HostDashboard/DashboardVanListing/DashboardVanListing";
+import DashboardVanListingDetails from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingDetails/DashboardVanListingDetails";
+import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPricing/DashboardVanListingPricing";
+import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
 
 function App() {
   return (
@@ -27,7 +30,12 @@ function App() {
             <Route path="income" element={<DashboardIncome />} />
             <Route path="reviews" element={<DashboardReview />} />
             <Route path="vans" element={<DashboardVans />} />
-            <Route path="vans/:id" element={<DashboardVanLisiting />} />
+
+            <Route path="vans/:id" element={<DashboardVanLisiting />}>
+              <Route index element={<DashboardVanListingDetails />} />
+              <Route path="pricing" element={<DashboardVanListingPricing />} />
+              <Route path="photos" element={<DashboardVanListingPhotos />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

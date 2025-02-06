@@ -1,5 +1,5 @@
 .host-dashboard {
-  width: 100%;
+  flex: 1;
 }
 
 .host-dashboard__main-content {

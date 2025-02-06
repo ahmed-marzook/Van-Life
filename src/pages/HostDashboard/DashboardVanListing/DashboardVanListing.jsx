@@ -1,6 +1,6 @@
 import Tag from "../../../components/Tag/Tag";
 import "./DashboardVanListing.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -47,45 +47,49 @@ function DashboardVanListing(props) {
 
           <div className="dashboard-van-listing__top-info">
             <Tag tag={van.type} />
-            <h1 className="dashboard-van-listing__title">{van.name}</h1>
+            <h2 className="dashboard-van-listing__title">{van.name}</h2>
             <p className="dashboard-van-listing__price">
-              <span className="dashboard-van-listing__amount">{van.price}</span>
+              <span className="dashboard-van-listing__amount">
+                ${van.price}
+              </span>
               <span className="dashboard-van-listing__duration">/day</span>
             </p>
           </div>
         </div>
-        <div className="dashboard-van-listing__nav"></div>
-        <div className="dashboard-van-listing__details">
-          <div className="dashboard-van-listing__detail-item">
-            <span className="dashboard-van-listing__detail-label">Name:</span>
-            <span className="dashboard-van-listing__detail-value">
-              {van.name}
-            </span>
-          </div>
-
-          <div className="dashboard-van-listing__detail-item">
-            <span className="dashboard-van-listing__detail-label">
-              Category:
-            </span>
-            <span className="dashboard-van-listing__detail-value">
-              {van.type}
-            </span>
-          </div>
-          <div className="dashboard-van-listing__detail-item">
-            <span className="dashboard-van-listing__detail-label">
-              Description:
-            </span>
-            <p className="dashboard-van-listing__detail-value">
-              {van.description}
-            </p>
-          </div>
-          <div className="dashboard-van-listing__detail-item">
-            <span className="dashboard-van-listing__detail-label">
-              Visibility:
-            </span>
-            <span className="dashboard-van-listing__detail-value">Public</span>
-          </div>
+        <div className="dashboard-van-listing__nav">
+          <NavLink
+            to={`/host/vans/${params.id}`}
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "dashboard-van-listing__nav-link active"
+                : "dashboard-van-listing__nav-link"
+            }
+          >
+            Details
+          </NavLink>
+          <NavLink
+            to={`/host/vans/${params.id}/pricing`}
+            className={({ isActive }) =>
+              isActive
+                ? "dashboard-van-listing__nav-link active"
+                : "dashboard-van-listing__nav-link"
+            }
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            to={`/host/vans/${params.id}/photos`}
+            className={({ isActive }) =>
+              isActive
+                ? "dashboard-van-listing__nav-link active"
+                : "dashboard-van-listing__nav-link"
+            }
+          >
+            Photos
+          </NavLink>
         </div>
+        <Outlet context={van} />
       </main>
     </div>
   );
