@@ -48,7 +48,7 @@ export default function Vans() {
               .fill(null)
               .map((_, index) => <VanCardSkeleton key={index} />)
           : vanList.map((van) => (
-              <Link to={`/vans/${van.id}`} key={van.id}>
+              <Link to={`${van.id}`} key={van.id}>
                 <Van
                   vanName={van.name}
                   vanTag={van.type}

@@ -12,7 +12,7 @@ export default function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <Link to="/vans" className="home__find-van-button">
+        <Link to="vans" className="home__find-van-button">
           Find your van
         </Link>
       </main>

@@ -5,14 +5,14 @@ import { Link, NavLink } from "react-router";
 export default function Header() {
   return (
     <header className="header">
-      <Link to="/">
+      <Link to=".">
         <img className="header__logo" src={logo} alt="Van Life Logo" />
       </Link>
       <nav className="header__nav-links">
         <ul className="header__nav-list">
           <li>
             <NavLink
-              to="/host"
+              to="host"
               className={({ isActive }) =>
                 isActive ? "header__nav-list active" : undefined
               }
@@ -22,7 +22,7 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="about"
               className={({ isActive }) =>
                 isActive ? "header__nav-list active" : undefined
               }
@@ -32,7 +32,7 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/vans"
+              to="vans"
               className={({ isActive }) =>
                 isActive ? "header__nav-list active" : undefined
               }
