@@ -4,8 +4,10 @@ export default function ErrorBoundary() {
   const error = useRouteError();
   return (
     <div>
-      <h1>Oops! Something went wrong</h1>
-      <p>{error.message}</p>
+      <h1>Error: {error.message}</h1>
+      <pre>
+        {error.status} - {error.statusText}
+      </pre>
     </div>
   );
 }

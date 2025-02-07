@@ -26,10 +26,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        errorElement: <ErrorBoundary />,
       },
       {
         path: "about",
         element: <About />,
+        errorElement: <ErrorBoundary />,
       },
       {
         path: "vans",
@@ -44,6 +46,7 @@ const router = createBrowserRouter([
       {
         path: "host",
         element: <HostDashboard />,
+        errorElement: <ErrorBoundary />,
         children: [
           {
             index: true,
