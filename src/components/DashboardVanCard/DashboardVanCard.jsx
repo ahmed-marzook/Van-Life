@@ -1,6 +1,6 @@
 import "./DashboardVanCard.css";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function DashboardVanCard(props) {
   return (
@@ -16,9 +16,9 @@ function DashboardVanCard(props) {
           <p className="dashboard-van-card__van-price">${props.vanPrice}/day</p>
         </div>
       </div>
-      <Link to={`/host/vans/${props.vanId}`} className="dashboard__link">
+      <NavLink to={`./${props.vanId}`} className="dashboard__link">
         Edit
-      </Link>
+      </NavLink>
     </div>
   );
 }

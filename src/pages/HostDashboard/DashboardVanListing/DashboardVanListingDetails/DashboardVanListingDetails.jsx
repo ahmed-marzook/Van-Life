@@ -1,5 +1,4 @@
 import "./DashboardVanListingDetails.css";
-import PropTypes from "prop-types";
 
 import { useOutletContext } from "react-router-dom";
 

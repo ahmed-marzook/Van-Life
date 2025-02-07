@@ -1,0 +1,27 @@
+/* Individual detail item */
+.dashboard-van-listing-details__item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Label styling */
+.dashboard-van-listing-details__label {
+  float: left;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Value styling */
+.dashboard-van-listing-details__value {
+  color: #666;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Paragraph within value */
+.dashboard-van-listing-details__value p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: normal;
+}

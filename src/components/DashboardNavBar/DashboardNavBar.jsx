@@ -5,7 +5,7 @@ function DashboardNavBar() {
   return (
     <nav className="dashboard-nav-bar__nav-list">
       <NavLink
-        to="/host"
+        to="."
         end
         className={({ isActive }) =>
           isActive
@@ -16,7 +16,7 @@ function DashboardNavBar() {
         Dashboard
       </NavLink>
       <NavLink
-        to="/host/income"
+        to="income"
         className={({ isActive }) =>
           isActive
             ? "dashboard-nav-bar__nav-link active"
@@ -26,7 +26,7 @@ function DashboardNavBar() {
         Income
       </NavLink>
       <NavLink
-        to="/host/vans"
+        to="vans"
         className={({ isActive }) =>
           isActive
             ? "dashboard-nav-bar__nav-link active"
@@ -36,7 +36,7 @@ function DashboardNavBar() {
         Vans
       </NavLink>
       <NavLink
-        to="/host/reviews"
+        to="reviews"
         className={({ isActive }) =>
           isActive
             ? "dashboard-nav-bar__nav-link active"

@@ -35,7 +35,10 @@ function DashboardVanListing(props) {
   return (
     <div className="dashboard-van-listing">
       <section className="dashboard-van-listing__back-link">
-        ← <Link to="/host/vans">Back to all vans</Link>
+        ←{" "}
+        <Link to=".." relative="path">
+          Back to all vans
+        </Link>
       </section>
       <main className="dashboard-van-listing__main-content">
         <div className="dashboard-van-listing__header">
@@ -50,7 +53,7 @@ function DashboardVanListing(props) {
             <h2 className="dashboard-van-listing__title">{van.name}</h2>
             <p className="dashboard-van-listing__price">
               <span className="dashboard-van-listing__amount">
-                ${van.price}
+                <strong>${van.price}</strong>
               </span>
               <span className="dashboard-van-listing__duration">/day</span>
             </p>
