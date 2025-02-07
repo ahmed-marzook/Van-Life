@@ -29,7 +29,7 @@ export default function About() {
             </h3>
             <h3 className="about__explore-header">Your van is ready.</h3>
           </div>
-          <Link to="vans" className="about__explore-our-vans-button">
+          <Link to="/Van-Life/vans" className="about__explore-our-vans-button">
             Explore our vans
           </Link>
         </section>

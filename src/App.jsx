@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./server";
@@ -17,32 +17,77 @@ import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListin
 import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
 import NotFound from "./pages/NotFound/NotFound";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/Van-life" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="vans" element={<Vans />} />
-          <Route path="vans/:id" element={<VanDetails />} />
-          <Route path="host" element={<HostDashboard />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<DashboardIncome />} />
-            <Route path="reviews" element={<DashboardReview />} />
-            <Route path="vans" element={<DashboardVans />} />
+const router = createBrowserRouter([
+  {
+    path: "/Van-life",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "vans",
+        element: <Vans />,
+      },
+      {
+        path: "vans/:id",
+        element: <VanDetails />,
+      },
+      {
+        path: "host",
+        element: <HostDashboard />,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: "income",
+            element: <DashboardIncome />,
+          },
+          {
+            path: "reviews",
+            element: <DashboardReview />,
+          },
+          {
+            path: "vans",
+            element: <DashboardVans />,
+          },
+          {
+            path: "vans/:id",
+            element: <DashboardVanLisiting />,
+            children: [
+              {
+                index: true,
+                element: <DashboardVanListingDetails />,
+              },
+              {
+                path: "pricing",
+                element: <DashboardVanListingPricing />,
+              },
+              {
+                path: "photos",
+                element: <DashboardVanListingPhotos />,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
 
-            <Route path="vans/:id" element={<DashboardVanLisiting />}>
-              <Route index element={<DashboardVanListingDetails />} />
-              <Route path="pricing" element={<DashboardVanListingPricing />} />
-              <Route path="photos" element={<DashboardVanListingPhotos />} />
-            </Route>
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
