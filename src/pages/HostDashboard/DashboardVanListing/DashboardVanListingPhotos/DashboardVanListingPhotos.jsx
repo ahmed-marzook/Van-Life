@@ -2,7 +2,7 @@ import "./DashboardVanListingPhotos.css";
 import { useOutletContext } from "react-router-dom";
 
 export default function DashboardVanListingPhotos() {
-  const van = useOutletContext();
+  const { currentVan: van } = useOutletContext();
   return (
     <div className="dashboard-van-listing-photos">
       <img

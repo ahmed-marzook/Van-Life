@@ -92,7 +92,7 @@ function DashboardVanListing(props) {
             Photos
           </NavLink>
         </div>
-        <Outlet context={van} />
+        <Outlet context={{ currentVan: van }} />
       </main>
     </div>
   );

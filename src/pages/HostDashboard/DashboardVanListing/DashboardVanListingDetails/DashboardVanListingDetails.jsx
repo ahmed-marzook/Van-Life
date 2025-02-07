@@ -3,7 +3,7 @@ import "./DashboardVanListingDetails.css";
 import { useOutletContext } from "react-router-dom";
 
 function DashboardVanListingDetails() {
-  const van = useOutletContext();
+  const { currentVan: van } = useOutletContext();
 
   return (
     <div className="dashboard-van-listing-details">

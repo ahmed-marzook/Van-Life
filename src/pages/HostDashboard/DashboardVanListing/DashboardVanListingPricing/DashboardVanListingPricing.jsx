@@ -3,7 +3,7 @@ import "./DashboardVanListingPricing.css";
 import { useOutletContext } from "react-router-dom";
 
 export default function DashboardVanListingPricing() {
-  const van = useOutletContext();
+  const { currentVan: van } = useOutletContext();
   return (
     <p className="dashboard-van-listing__price">
       <span className="dashboard-van-listing__amount">
