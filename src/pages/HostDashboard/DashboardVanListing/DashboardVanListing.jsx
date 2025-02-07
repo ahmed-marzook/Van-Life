@@ -61,7 +61,7 @@ function DashboardVanListing(props) {
         </div>
         <div className="dashboard-van-listing__nav">
           <NavLink
-            to={`/host/vans/${params.id}`}
+            to={"."}
             end
             className={({ isActive }) =>
               isActive
@@ -72,7 +72,7 @@ function DashboardVanListing(props) {
             Details
           </NavLink>
           <NavLink
-            to={`/host/vans/${params.id}/pricing`}
+            to={"pricing"}
             className={({ isActive }) =>
               isActive
                 ? "dashboard-van-listing__nav-link active"
@@ -82,7 +82,7 @@ function DashboardVanListing(props) {
             Pricing
           </NavLink>
           <NavLink
-            to={`/host/vans/${params.id}/photos`}
+            to={"photos"}
             className={({ isActive }) =>
               isActive
                 ? "dashboard-van-listing__nav-link active"
