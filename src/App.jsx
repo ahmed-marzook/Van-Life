@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./server";
-import Vans from "./pages/Vans/Vans";
+import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
 import VanDetails from "./pages/VanDetails/VanDetails";
 import Layout from "./components/Layout/Layout";
 import HostDashboard from "./pages/HostDashboard/HostDashboard";
@@ -16,6 +16,7 @@ import DashboardVanListingDetails from "./pages/HostDashboard/DashboardVanListin
 import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPricing/DashboardVanListingPricing";
 import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
 import NotFound from "./pages/NotFound/NotFound";
+import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,8 @@ const router = createBrowserRouter([
       {
         path: "vans",
         element: <Vans />,
+        loader: vansLoader,
+        errorElement: <ErrorBoundary />,
       },
       {
         path: "vans/:id",

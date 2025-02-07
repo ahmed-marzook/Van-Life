@@ -1,34 +1,21 @@
 import "./Vans.css";
-import { useState, useEffect } from "react";
 import Van from "../../components/Van/Van";
-import { Link, useSearchParams } from "react-router-dom";
-import VanCardSkeleton from "../../components/Van/VanSkeleton/VanSkeleton";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
+
+export async function loader() {
+  const response = await fetch("/api/vans");
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
 
 export default function Vans() {
-  const [vanList, setVanList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [vanList, setVanList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-
-  useEffect(() => {
-    const fetchVans = async () => {
-      try {
-        const response = await fetch("/api/vans");
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setVanList(data.vans);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchVans();
-  }, []);
+  const vanList = useLoaderData().vans;
+  console.log(vanList);
 
   const displayedVans = typeFilter
     ? vanList.filter((van) => van.type === typeFilter)
@@ -44,8 +31,6 @@ export default function Vans() {
       return prevParams;
     });
   }
-
-  if (error) return <h1>Error: {error}</h1>;
 
   return (
     <main className="vans__main-content">
@@ -93,28 +78,23 @@ export default function Vans() {
         )}
       </section>
       <section className="vans__list">
-        {isLoading
-          ? // Render multiple skeletons while loading
-            Array(8)
-              .fill(null)
-              .map((_, index) => <VanCardSkeleton key={index} />)
-          : displayedVans.map((van) => (
-              <Link
-                to={`${van.id}`}
-                key={van.id}
-                state={{
-                  filter: `?${searchParams.toString()}`,
-                  type: typeFilter,
-                }}
-              >
-                <Van
-                  vanName={van.name}
-                  vanTag={van.type}
-                  vanPrice={van.price}
-                  vanImageUrl={van.imageUrl}
-                />
-              </Link>
-            ))}
+        {displayedVans.map((van) => (
+          <Link
+            to={`${van.id}`}
+            key={van.id}
+            state={{
+              filter: `?${searchParams.toString()}`,
+              type: typeFilter,
+            }}
+          >
+            <Van
+              vanName={van.name}
+              vanTag={van.type}
+              vanPrice={van.price}
+              vanImageUrl={van.imageUrl}
+            />
+          </Link>
+        ))}
       </section>
     </main>
   );
