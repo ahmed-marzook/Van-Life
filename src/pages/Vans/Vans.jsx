@@ -1,20 +1,18 @@
 import "./Vans.css";
 import Van from "../../components/Van/Van";
 import { Link, useLoaderData, useSearchParams } from "react-router-dom";
+import { getVanList } from "../../api/getVanList";
 
 export async function loader() {
-  const response = await fetch("/api/vans");
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.json();
+  return getVanList();
 }
 
 export default function Vans() {
   // const [vanList, setVanList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  const vanList = useLoaderData().vans;
+  const vanList = useLoaderData();
+
   console.log(vanList);
 
   const displayedVans = typeFilter
