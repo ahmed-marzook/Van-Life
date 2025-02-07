@@ -1,13 +1,15 @@
 import "./Vans.css";
 import { useState, useEffect } from "react";
 import Van from "../../components/Van/Van";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import VanCardSkeleton from "../../components/Van/VanSkeleton/VanSkeleton";
 
 export default function Vans() {
   const [vanList, setVanList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
 
   useEffect(() => {
     const fetchVans = async () => {
@@ -28,6 +30,10 @@ export default function Vans() {
     fetchVans();
   }, []);
 
+  const displayedVans = typeFilter
+    ? vanList.filter((van) => van.type === typeFilter)
+    : vanList;
+
   if (error) return <h1>Error: {error}</h1>;
 
   return (
@@ -36,10 +42,30 @@ export default function Vans() {
         <h1 className="vans__heading">Explore our van options</h1>
       </section>
       <section className="vans_options">
-        <button className="vans__options-button">Simple</button>
-        <button className="vans__options-button">Luxury</button>
-        <button className="vans__options-button">Rugged</button>
-        <button className="vans__options-button clear">Clear filters</button>
+        <button
+          onClick={() => setSearchParams({ type: "simple" })}
+          className="vans__options-button"
+        >
+          Simple
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "luxury" })}
+          className="vans__options-button"
+        >
+          Luxury
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "rugged" })}
+          className="vans__options-button"
+        >
+          Rugged
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "" })}
+          className="vans__options-button clear"
+        >
+          Clear filters
+        </button>
       </section>
       <section className="vans__list">
         {isLoading
@@ -47,7 +73,7 @@ export default function Vans() {
             Array(8)
               .fill(null)
               .map((_, index) => <VanCardSkeleton key={index} />)
-          : vanList.map((van) => (
+          : displayedVans.map((van) => (
               <Link to={`${van.id}`} key={van.id}>
                 <Van
                   vanName={van.name}
