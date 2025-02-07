@@ -1,6 +1,6 @@
 import "./VanDetails.css";
 import Tag from "../../components/Tag/Tag";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import VanDetailsSkeleton from "./VanDetailsSkeleton/VanDetailsSkeleton";
 
@@ -8,7 +8,10 @@ export default function VanDetails() {
   const [van, setVan] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const params = useParams();
+  // Get URL parameters and location state from React Router
+  const params = useParams(); // Access URL parameters (van ID)
+  const { state } = useLocation(); // Get navigation state
+  const filter = state ? state.filter : ""; // Extract filter from state or use empty string
 
   useEffect(() => {
     const fetchVans = async () => {
@@ -35,7 +38,10 @@ export default function VanDetails() {
   return (
     <main className="van-detail__main-content">
       <section className="van-detail__back-link">
-        ← <Link to="/vans">Back to all vans</Link>
+        ←
+        <Link to={`..${filter}`} relative="path">
+          Back to all vans
+        </Link>
       </section>
       <div className="van-detail__image">
         <img src={van.imageUrl} alt={van.name} />

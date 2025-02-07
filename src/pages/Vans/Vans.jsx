@@ -99,7 +99,11 @@ export default function Vans() {
               .fill(null)
               .map((_, index) => <VanCardSkeleton key={index} />)
           : displayedVans.map((van) => (
-              <Link to={`${van.id}`} key={van.id}>
+              <Link
+                to={`${van.id}`}
+                key={van.id}
+                state={{ filter: `?${searchParams.toString()}` }}
+              >
                 <Van
                   vanName={van.name}
                   vanTag={van.type}
