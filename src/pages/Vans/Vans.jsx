@@ -102,7 +102,10 @@ export default function Vans() {
               <Link
                 to={`${van.id}`}
                 key={van.id}
-                state={{ filter: `?${searchParams.toString()}` }}
+                state={{
+                  filter: `?${searchParams.toString()}`,
+                  type: typeFilter,
+                }}
               >
                 <Van
                   vanName={van.name}

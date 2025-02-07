@@ -11,8 +11,8 @@ export default function VanDetails() {
   // Get URL parameters and location state from React Router
   const params = useParams(); // Access URL parameters (van ID)
   const { state } = useLocation(); // Get navigation state
-  const filter = state ? state.filter : ""; // Extract filter from state or use empty string
-
+  const filter = state?.filter || ""; // Extract filter from state or use empty string
+  const type = state?.type || "";
   useEffect(() => {
     const fetchVans = async () => {
       try {
@@ -40,7 +40,7 @@ export default function VanDetails() {
       <section className="van-detail__back-link">
         ←
         <Link to={`..${filter}`} relative="path">
-          Back to all vans
+          Back to all {type} vans
         </Link>
       </section>
       <div className="van-detail__image">
