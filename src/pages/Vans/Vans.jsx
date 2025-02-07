@@ -34,6 +34,17 @@ export default function Vans() {
     ? vanList.filter((van) => van.type === typeFilter)
     : vanList;
 
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
+
   if (error) return <h1>Error: {error}</h1>;
 
   return (
@@ -43,25 +54,25 @@ export default function Vans() {
       </section>
       <section className="vans_options">
         <button
-          onClick={() => setSearchParams({ type: "simple" })}
+          onClick={() => handleFilterChange("type", "simple")}
           className="vans__options-button"
         >
           Simple
         </button>
         <button
-          onClick={() => setSearchParams({ type: "luxury" })}
+          onClick={() => handleFilterChange("type", "luxury")}
           className="vans__options-button"
         >
           Luxury
         </button>
         <button
-          onClick={() => setSearchParams({ type: "rugged" })}
+          onClick={() => handleFilterChange("type", "rugged")}
           className="vans__options-button"
         >
           Rugged
         </button>
         <button
-          onClick={() => setSearchParams({ type: "" })}
+          onClick={() => handleFilterChange("type", null)}
           className="vans__options-button clear"
         >
           Clear filters
