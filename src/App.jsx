@@ -15,6 +15,7 @@ import DashboardVanLisiting from "./pages/HostDashboard/DashboardVanListing/Dash
 import DashboardVanListingDetails from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingDetails/DashboardVanListingDetails";
 import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPricing/DashboardVanListingPricing";
 import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="photos" element={<DashboardVanListingPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
