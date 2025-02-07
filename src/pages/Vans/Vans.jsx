@@ -55,28 +55,42 @@ export default function Vans() {
       <section className="vans_options">
         <button
           onClick={() => handleFilterChange("type", "simple")}
-          className="vans__options-button"
+          className={
+            typeFilter === "simple"
+              ? "vans__options-button simple selected"
+              : "vans__options-button simple"
+          }
         >
           Simple
         </button>
         <button
           onClick={() => handleFilterChange("type", "luxury")}
-          className="vans__options-button"
+          className={
+            typeFilter === "luxury"
+              ? "vans__options-button luxury selected"
+              : "vans__options-button luxury"
+          }
         >
           Luxury
         </button>
         <button
           onClick={() => handleFilterChange("type", "rugged")}
-          className="vans__options-button"
+          className={
+            typeFilter === "rugged"
+              ? "vans__options-button rugged selected"
+              : "vans__options-button rugged"
+          }
         >
           Rugged
         </button>
-        <button
-          onClick={() => handleFilterChange("type", null)}
-          className="vans__options-button clear"
-        >
-          Clear filters
-        </button>
+        {typeFilter && (
+          <button
+            onClick={() => handleFilterChange("type", null)}
+            className="vans__options-button clear"
+          >
+            Clear filters
+          </button>
+        )}
       </section>
       <section className="vans__list">
         {isLoading

@@ -32,6 +32,25 @@
   border-radius: 5px; /* Rounds corners */
   padding: 7px 26px; /* Adds space inside buttons */
   border: none; /* Removes border */
+  cursor: pointer;
+}
+
+.vans__options-button.simple:hover,
+.vans__options-button.simple.selected {
+  background-color: #e17654;
+  color: white;
+}
+
+.vans__options-button.rugged:hover,
+.vans__options-button.rugged.selected {
+  background-color: #115e59;
+  color: white;
+}
+
+.vans__options-button.luxury:hover,
+.vans__options-button.luxury.selected {
+  background-color: #161616;
+  color: white;
 }
 
 /* Clear filter button variant */
