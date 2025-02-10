@@ -1,10 +1,10 @@
 import "./Vans.css";
 import Van from "../../components/Van/Van";
 import { Link, useLoaderData, useSearchParams } from "react-router-dom";
-import { getVanList } from "../../api/getVanList";
+import { getVans } from "../../api/getVanList";
 
 export async function loader() {
-  return getVanList();
+  return getVans();
 }
 
 export default function Vans() {
@@ -12,8 +12,6 @@ export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
   const vanList = useLoaderData();
-
-  console.log(vanList);
 
   const displayedVans = typeFilter
     ? vanList.filter((van) => van.type === typeFilter)

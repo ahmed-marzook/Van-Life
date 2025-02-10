@@ -4,13 +4,17 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import "./server";
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
-import VanDetails from "./pages/VanDetails/VanDetails";
+import VanDetails, {
+  loader as vanDetailsLoader,
+} from "./pages/VanDetails/VanDetails";
 import Layout from "./components/Layout/Layout";
 import HostDashboard from "./pages/HostDashboard/HostDashboard";
 import DashboardVans from "./pages/HostDashboard/DashboardVans/DashboardVans";
 import DashboardReview from "./pages/HostDashboard/DashboardReviews/DashboardReview";
 import DashboardIncome from "./pages/HostDashboard/DashboardIncome/DashboardIncome";
-import Dashboard from "./pages/HostDashboard/Dashboard/Dashboard";
+import Dashboard, {
+  loader as hostDashboardLoader,
+} from "./pages/HostDashboard/Dashboard/Dashboard";
 import DashboardVanLisiting from "./pages/HostDashboard/DashboardVanListing/DashboardVanListing";
 import DashboardVanListingDetails from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingDetails/DashboardVanListingDetails";
 import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPricing/DashboardVanListingPricing";
@@ -43,6 +47,7 @@ const router = createBrowserRouter([
       {
         path: "vans/:id",
         element: <VanDetails />,
+        loader: vanDetailsLoader,
       },
       {
         path: "login",
@@ -56,6 +61,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
+            loader: hostDashboardLoader,
           },
           {
             path: "income",

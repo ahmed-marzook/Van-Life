@@ -1,39 +1,20 @@
 import "./VanDetails.css";
 import Tag from "../../components/Tag/Tag";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import VanDetailsSkeleton from "./VanDetailsSkeleton/VanDetailsSkeleton";
+import { getVans } from "../../api/getVanList";
+
+export async function loader({ params }) {
+  return getVans(params.id);
+}
 
 export default function VanDetails() {
-  const [van, setVan] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  // Get URL parameters and location state from React Router
-  const params = useParams(); // Access URL parameters (van ID)
+  const van = useLoaderData();
   const { state } = useLocation(); // Get navigation state
+
   const filter = state?.filter || ""; // Extract filter from state or use empty string
   const type = state?.type || "all";
-  useEffect(() => {
-    const fetchVans = async () => {
-      try {
-        const response = await fetch(`/api/vans/${params.id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setVan(data.vans);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchVans();
-  }, [params]);
-
-  if (isLoading) return <VanDetailsSkeleton />;
-  if (error) return <h1>Error: {error}</h1>;
 
   return (
     <main className="van-detail__main-content">
