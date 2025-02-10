@@ -2,9 +2,10 @@
 .dashboard-nav-bar__nav-list {
   display: flex;
   list-style: none;
-  gap: 4rem;
+  gap: 2rem;
   margin: 1rem 2rem;
   padding: 0;
+  max-width: 100%;
 }
 
 .dashboard-nav-bar__nav-link {
