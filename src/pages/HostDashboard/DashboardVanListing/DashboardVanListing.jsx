@@ -3,8 +3,8 @@ import "./DashboardVanListing.css";
 import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../../api/getVanList";
 
-export async function loader({ params }) {
-  return getHostVans(params.id);
+export async function loader(id) {
+  return getHostVans(id);
 }
 
 function DashboardVanListing() {

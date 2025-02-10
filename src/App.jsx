@@ -26,6 +26,7 @@ import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing
 import NotFound from "./pages/NotFound/NotFound";
 import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary";
 import Login from "./pages/Login/Login";
+import { requireAuth } from "./utility/requireAuth";
 
 const router = createBrowserRouter([
   {
@@ -61,29 +62,49 @@ const router = createBrowserRouter([
         path: "host",
         element: <HostDashboard />,
         errorElement: <ErrorBoundary />,
+        loader: async () => {
+          await requireAuth();
+        },
         children: [
           {
             index: true,
             element: <Dashboard />,
-            loader: hostDashboardLoader,
+            loader: async () => {
+              await requireAuth();
+              return hostDashboardLoader();
+            },
           },
           {
             path: "income",
             element: <DashboardIncome />,
+            loader: async () => {
+              await requireAuth();
+              return null;
+            },
           },
           {
             path: "reviews",
             element: <DashboardReview />,
+            loader: async () => {
+              await requireAuth();
+              return null;
+            },
           },
           {
             path: "vans",
             element: <DashboardVans />,
-            loader: hostVansDashboardloader,
+            loader: async () => {
+              await requireAuth();
+              return hostVansDashboardloader();
+            },
           },
           {
             path: "vans/:id",
             element: <DashboardVanLisiting />,
-            loader: hostDashboardVanListingLoader,
+            loader: async ({ params }) => {
+              await requireAuth();
+              return hostDashboardVanListingLoader(params.id);
+            },
             children: [
               {
                 index: true,
