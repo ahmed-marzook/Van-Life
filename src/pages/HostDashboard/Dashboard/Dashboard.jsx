@@ -2,10 +2,10 @@ import "./Dashboard.css";
 import { Link, useLoaderData } from "react-router-dom";
 import star from "../../../assets/star.svg";
 import DashboardVanCard from "../../../components/DashboardVanCard/DashboardVanCard";
-import { getVans } from "../../../api/getVanList";
+import { getHostVans } from "../../../api/getVanList";
 
 export async function loader() {
-  return getVans();
+  return getHostVans();
 }
 
 function Dashboard(props) {

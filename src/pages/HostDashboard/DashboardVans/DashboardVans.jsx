@@ -1,35 +1,15 @@
 import "./DashboardVans.css";
-import PropTypes from "prop-types";
 import DashboardVanCard from "../../../components/DashboardVanCard/DashboardVanCard";
-import { useState, useEffect } from "react";
+import { getHostVans } from "../../../api/getVanList";
+import { useLoaderData } from "react-router-dom";
 
-function DashboardVans(props) {
-  const [vanList, setVanList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+export async function loader() {
+  return getHostVans();
+}
 
-  useEffect(() => {
-    const fetchVans = async () => {
-      try {
-        const response = await fetch("/api/vans");
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setVanList(data.vans);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchVans();
-  }, []);
-
-  if (isLoading) return <h1>Loading...</h1>;
-
-  if (error) return <h1>Error: {error}</h1>;
+function DashboardVans() {
+  const vanList = useLoaderData();
+  console.log(vanList);
   return (
     <div className="dashboard-vans">
       <h1 className="dashboard-vans__vans-title">Your listed vans</h1>
@@ -48,7 +28,5 @@ function DashboardVans(props) {
     </div>
   );
 }
-
-DashboardVans.propTypes = {};
 
 export default DashboardVans;

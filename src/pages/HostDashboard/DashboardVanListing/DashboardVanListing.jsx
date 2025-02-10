@@ -1,36 +1,14 @@
 import Tag from "../../../components/Tag/Tag";
 import "./DashboardVanListing.css";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../../api/getVanList";
 
-function DashboardVanListing(props) {
-  const [van, setVan] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const params = useParams();
+export async function loader({ params }) {
+  return getHostVans(params.id);
+}
 
-  useEffect(() => {
-    const fetchVans = async () => {
-      try {
-        const response = await fetch(`/api/vans/${params.id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setVan(data.vans);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchVans();
-  }, [params]);
-
-  if (isLoading) return <h1>IS LOADING...</h1>;
-  if (error) return <h1>Error: {error}</h1>;
+function DashboardVanListing() {
+  const van = useLoaderData();
 
   return (
     <div className="dashboard-van-listing">
@@ -97,7 +75,5 @@ function DashboardVanListing(props) {
     </div>
   );
 }
-
-DashboardVanListing.propTypes = {};
 
 export default DashboardVanListing;

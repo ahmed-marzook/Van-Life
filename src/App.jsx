@@ -9,13 +9,17 @@ import VanDetails, {
 } from "./pages/VanDetails/VanDetails";
 import Layout from "./components/Layout/Layout";
 import HostDashboard from "./pages/HostDashboard/HostDashboard";
-import DashboardVans from "./pages/HostDashboard/DashboardVans/DashboardVans";
+import DashboardVans, {
+  loader as hostVansDashboardloader,
+} from "./pages/HostDashboard/DashboardVans/DashboardVans";
 import DashboardReview from "./pages/HostDashboard/DashboardReviews/DashboardReview";
 import DashboardIncome from "./pages/HostDashboard/DashboardIncome/DashboardIncome";
 import Dashboard, {
   loader as hostDashboardLoader,
 } from "./pages/HostDashboard/Dashboard/Dashboard";
-import DashboardVanLisiting from "./pages/HostDashboard/DashboardVanListing/DashboardVanListing";
+import DashboardVanLisiting, {
+  loader as hostDashboardVanListingLoader,
+} from "./pages/HostDashboard/DashboardVanListing/DashboardVanListing";
 import DashboardVanListingDetails from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingDetails/DashboardVanListingDetails";
 import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPricing/DashboardVanListingPricing";
 import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
@@ -74,10 +78,12 @@ const router = createBrowserRouter([
           {
             path: "vans",
             element: <DashboardVans />,
+            loader: hostVansDashboardloader,
           },
           {
             path: "vans/:id",
             element: <DashboardVanLisiting />,
+            loader: hostDashboardVanListingLoader,
             children: [
               {
                 index: true,
