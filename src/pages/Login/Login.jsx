@@ -1,6 +1,6 @@
 import "./Login.css";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { loginUser } from "../../api/loginUser";
 
 export function loader({ request }) {
@@ -11,9 +11,11 @@ export default function Login() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
   const message = useLoaderData();
+  const navigate = useNavigate();
 
   function submitForm(formData) {
     setStatus("submitting");
+    setError(null);
     loginUser({
       email: formData.get("email"),
       password: formData.get("password"),
@@ -21,6 +23,8 @@ export default function Login() {
       .then((data) => {
         console.log(data);
         setError(null);
+        localStorage.setItem("loggedin", true);
+        navigate("/Van-Life/host", { replace: true });
       })
       .catch((err) => setError(err))
       .finally(() => setStatus("idle"));
