@@ -25,7 +25,7 @@ import DashboardVanListingPricing from "./pages/HostDashboard/DashboardVanListin
 import DashboardVanListingPhotos from "./pages/HostDashboard/DashboardVanListing/DashboardVanListingPhotos/DashboardVanListingPhotos";
 import NotFound from "./pages/NotFound/NotFound";
 import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary";
-import Login from "./pages/Login/Login";
+import Login, { loader as loginLoader } from "./pages/Login/Login";
 import { requireAuth } from "./utility/requireAuth";
 
 const router = createBrowserRouter([
@@ -57,6 +57,7 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+        loader: loginLoader,
       },
       {
         path: "host",
